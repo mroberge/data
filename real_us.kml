@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<kml xmlns="http://earth.google.com/kml/2.0"> 
+<Document> 
+<visiblity>1</visiblity> 
+<NetworkLink> 
+<name>USGS WaterWatch</name> 
+<flyToView>1</flyToView> 
+<Url> 
+  <href><![CDATA[http://waterwatch.usgs.gov/?m=real&w=kml&regions=all]]></href> 
+  <refreshMode>onInterval</refreshMode> 
+  <refreshInterval>3600</refreshInterval> 
+  <viewRefreshMode>never</viewRefreshMode> 
+  <viewRefreshTime>1800</viewRefreshTime> 
+</Url> 
+<refreshVisibility>1</refreshVisibility> 
+</NetworkLink> 
+</Document> 
+</kml>
