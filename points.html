@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="Martin Roberge" />
+    <meta name="keywords" content="hydrology, stream gauges, USGS, data" />
+
+    <!-- Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet-src.js"></script>
+    <link href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" rel="stylesheet">
+    <script type="text/javascript" src="test.js"></script>
+
+    <style>
+       #map {
+         height: 500px;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+
+
+  <script>
+	var points = [
+  {
+    "site":"01541222",
+    "name":"Cylburn",
+    "lat":39.350105,
+    "long":-76.653324
+  },
+  {
+    "site":"01541253",
+    "name":"Druid Hill",
+    "lat":39.321981, 
+    "long":-76.641791
+  },
+  {
+    "site":"0154666",
+    "name":"Inner Harbor",
+    "lat":39.283777, 
+    "long":-76.609789
+  }
+]
+
+<!-- Either hard code as points, above, or hardcode in external js file, as test.js -->
+console.log(test);
+
+    var map = L.map("map");
+    L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png").addTo(map);
+
+    map.setView([39.3, -76.6], 11);
+
+    var myRenderer = L.canvas({ padding: 0.5 });
+
+    for (var j = 0; j < points.length; j++) {
+	var point = points[j];
+        console.log(point.name);
+        L.circleMarker([point.lat, point.long], {
+        renderer: myRenderer
+        }).addTo(map).bindPopup(point.name);
+    }
+
+
+
+
+</script>
+
+
+  </body>
+</html>
+
+
+
+
+
+
+
+
